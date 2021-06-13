@@ -16,43 +16,28 @@ function isSumOfCubes(s) {
    
     cubic = numbers.filter((number,i) => numbers.includes(sums[i]))
    
-    
-    console.log(numbers)
-    console.log(`
-                    ${sums}
+    if (cubic.length === 0) {
+        return console.log('Unlucky')
+    } else {
+        return console.log(`${cubic.join(' ')} ${sumCubic(cubic)} Lucky`)
+    }
+
+    // console.log(numbers)
+    // console.log(`
+    //                 ${sums}
                                 
-                    ${cubic}`)
+    //                 ${cubic} - cubic length ${cubic.length}`)
 
-    console.log(isCubic(numbers, sums[1]))
-    // let test = numbers.map(number => [...number].reduce((acc, cVal) => {
-    //     return acc + power(cVal)
-    // }, 0))
-
-//     console.log(test + ' ' + numbers)
+    // console.log(isCubic(numbers, sums[1]))
   
-//     numbers.map((number,i) => {
-//         if (number == test[i]) {
-//             return cubic.push(Number.parseInt(number) )
-//         } 
-//     })
-  
-//     if(cubic.length === 0) {
-//       return `Unlucky`
-//     } else {
-//       let sum = cubic.reduce((acc,cVal) => acc + cVal)
-//       cubic.push(sum)
-//       console.log(cubic.join(' ') + ` Lucky` + `  Type:` + typeof cubic)
-//       console.log(`Length of cubic is: ` + cubic.length)
-//       return cubic.join(' ') + ` Lucky`
-//     }
 }
 
 function power(number) {
     return Math.pow(number, 3)
 }
 
-function isCubic(array , sum) {
-    return array.includes(sum)
+function sumCubic(array) {
+    return array.reduce((acc,cval) => acc+Number.parseInt(cval),0)
 }
 
 isSumOfCubes(string);
