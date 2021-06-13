@@ -1,14 +1,27 @@
 const string = "371407298a --- dreary, ###100.153 I thought, 9926315strong -127&() 1";
 const string2 = "153000153407000407";
-const string3 = "QK29a45[&erui9026315";
-const regzero = /(0){2,3}/g
+const string3 = "000 00 001 101 100 005"
+
+
 
 function isSumOfCubes(s) {
     const regexp = /(\d){1,3}/g   
-    const numbers = [...s.match(regexp)] // filter string with regular expression and spread the matches on an array
-    let sums = []
-    let cubic = []
-    trimZeroes(numbers)
+    const numbers = [...s.match(regexp)].map(a => {
+        switch(a){
+            case '000':
+                return a = '0';
+                break;
+            case '00':
+                return a = '0';
+                break;
+            default:
+                return a
+
+        }
+    } ) // filter string with regular expression and spread the matches on an array
+    
+    let sums, cubic = []
+ 
     console.log(numbers)
     
     sums = numbers.map(number => [...number].reduce((acc,cval) => { // spread each element of numbers array to calculate the sum of power 3 
