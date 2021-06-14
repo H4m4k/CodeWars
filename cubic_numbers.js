@@ -31,7 +31,7 @@ function isSumOfCubes(s) {
     sums = sums.map( sum => sum.toString()) // convert the integers back to strings to use the strict compare , as two arrays elements will never be equal
    
     cubic = numbers.filter((number,i) => {
-        return numbers.includes(sums[i])
+        return sums.includes(numbers[i])
     })
    
     if (cubic.length === 0) {
