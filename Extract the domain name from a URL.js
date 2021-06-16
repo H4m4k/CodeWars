@@ -7,13 +7,10 @@ const domain3 = 'www.wp.pl'
 
 function domainName(url){
 
-    if (url.startsWith('https')) {
-        return url.substring(8,url.indexOf('.'))
-    } else if (url.startsWith('http')) {
-        return url.substring(7,url.indexOf('.'))
-    } else if (url.startsWith('www')) {
-        return url.substring(4,url.indexOf('.',5))
-    }
+    url = url.replace("https://", '');
+    url = url.replace("http://", '');
+    url = url.replace("www.", '');
+    return url.split('.')[0];
 }
 
 domainName(domain)
