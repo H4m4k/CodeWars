@@ -1,4 +1,6 @@
-const string = 'AAAABBBCCDAABBB'
+const tester = {string: 'AAAABBBCCDAABBB', string2: 'ABBCcAD', string3: [1,2,2,3,3]  }
+
+
 
 
 let uniqueInOrder=function(iterable){
@@ -9,12 +11,12 @@ let uniqueInOrder=function(iterable){
     test.map(item => (!unique.includes(item))? unique.push(item): '' ) 
     console.log(unique)
 
-    let tester = 0;
-    const distinct = []
-    test.map((item,index) => (item[index] !== item[index + 1])? distinct.push(item): '')
-    console.log(distinct)
+    
+    console.log(test.filter((item,i) => test[i] !== test[i+1]  ))
+
 }
 
-uniqueInOrder(string)
+uniqueInOrder(tester.string)
+
   // spread the input over an array
-  // add first occurence of a character to uniqe array, each duplicate next to first occurence - discard
+  // test neighboring array items, if they are different return the item
