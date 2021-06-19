@@ -7,12 +7,7 @@ let uniqueInOrder=function(iterable){
     const test = [...iterable]
     console.log(test)
 
-    const unique = []
-    test.map(item => (!unique.includes(item))? unique.push(item): '' ) 
-    console.log(unique)
-
-    
-    console.log(test.filter((item,i) => test[i] !== test[i+1]  ))
+    return test.filter((item,i) => item !== test[i+1] )
 
 }
 
