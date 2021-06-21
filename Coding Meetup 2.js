@@ -3,7 +3,7 @@
 // Hi < firstName here >, what do you like the most about < language here >?
 
 
-// I will use map to add a new key to the object with expected value
+//PJ - I will use map to add a new key to the object with expected value
 
 const list1 = [
     { firstName: 'Sofia', lastName: 'I.', country: 'Argentina', continent: 'Americas', age: 35, language: 'Java' },

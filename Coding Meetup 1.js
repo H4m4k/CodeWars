@@ -1,6 +1,6 @@
 //Coding Meetup #1 - Higher-Order Functions Series - Count the number of JavaScript developers coming from Europe
 
-// filter the array received for the conditions given and return with length
+//PJ - I will filter the array received, for the conditions given and return with length
 
 const list1 = [
     { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'JavaScript' },
