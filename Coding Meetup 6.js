@@ -21,13 +21,13 @@ const list2 = [
 
 
   function isSameLanguage(list) {
-    return console.log(list.every((dev,index,array)=> {
+    return list.every((dev,index,array)=> {
         if( index === 0) {
             return true;
         } else {
             return (dev.language === array[index-1].language)
         }
-    }))
+    })
 }
 
   isSameLanguage(list2)
