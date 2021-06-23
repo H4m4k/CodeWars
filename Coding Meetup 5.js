@@ -2,8 +2,8 @@
 
 // Your task is to return an object (associative array in PHP) which includes the count of each coding language represented at the meetup.
 
-// PJ - I will use filter function and then count the length of the returned array
-// return length - Integer
+// I have used reduce to properly count without overcomplicating - based on MDN resource
+// return object { language: count_integer }
 
 const list1 = [
     { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'C' },
@@ -12,13 +12,17 @@ const list1 = [
     { firstName: 'George', lastName: 'B.', country: 'England', continent: 'Europe', age: 81, language: 'C' },
   ];
 
-  const count = {C: 0, JavaScript: 0, Ruby : 0}
-
-
   function countLanguages(list) {
-    const test = list1.map(dev => dev.language)
-    console.log(test.filter(item => item ).length)
-    console.log(test)
+    let countedLanguages = list.reduce((sum, dev) => {
+      if (dev.language in sum) {
+        sum[dev.language]++
+      }
+      else {
+        sum[dev.language] = 1
+      }
+      return sum
+    }, {})
+    return countedLanguages
   }
 
   countLanguages(list1)
