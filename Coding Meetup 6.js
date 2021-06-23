@@ -31,3 +31,14 @@ const list2 = [
 }
 
   isSameLanguage(list2)
+
+  // another variant - much simpler 
+
+
+//   function isSameLanguage(list) {
+//     return list.every(e => e.language === list[0].language);
+//   }
+
+// e       - this is the current element              .language is the key in this element
+// list[0] - points to first element of list array    .language is the key in that element
+//           result is achieved by comparing e.language, against list[0].language, because all are expected the same , so the [0] index really doesnt matter, it just has to be within the  //           length of the array
