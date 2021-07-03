@@ -18,7 +18,7 @@ const list1 = [
 const current_Year = new Date();
 
   function addUsername(list) {
-    list.map(dev => dev.username = `${dev.firstName[0].toLowerCase()}${dev.lastName[0].toLowerCase()}${current_Year.getFullYear()-dev.age}`)
+    list.map(dev => dev.username = `${dev.firstName.toLowerCase()}${dev.lastName[0].toLowerCase()}${current_Year.getFullYear()-dev.age}`)
     return list;
   }
 
