@@ -1,7 +1,8 @@
 /*
     @description - write a function that returns the average age of developers (rounded to the nearest integer). In the example above your function should return 50 (number).
     @param {array} - array of objects
-    @return {integer} - sum of age of all developers / number of developers
+    @return {integer} 
+    @solution - sum of age of all developers / number of developers
 */
 
 const list1 = [
