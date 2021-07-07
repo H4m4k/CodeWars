@@ -19,9 +19,11 @@ const list1 = [
   function isLanguageDiverse(list) {
       let language = list.map(dev => dev.language)
       console.log(language)
-      const count = language.reduce((sum,curr) => (sum[curr] = ++sum[curr] || 1, sum),{})
-
-      return (Math.max(...Object.values(count))-Math.min(...Object.values(count)) > 1) ? false : true ;
+      const count = language.reduce((sum,curr) => (sum[curr] = ++sum[curr] || 1, sum),{})   
+      const max = Math.max(...Object.values(count))
+      const min = Math.min(...Object.values(count))
+      
+      return (max-min > 1) ? false : true ;
 
   }
 
