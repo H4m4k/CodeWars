@@ -4,7 +4,7 @@
                 false otherwise.
 @input {array} - array of objects
 @return {boolean} - true/false
-
+@solution - map the list1.language to count the occurence with reduce, than use min() and max() functions with a condition to return boolean
 */
 
 const list1 = [
@@ -17,12 +17,23 @@ const list1 = [
   ];
 
   function isLanguageDiverse(list) {
-      let language = list.map(dev => dev.language)
-      console.log(language)
-      const count = language.reduce((sum,curr) => (sum[curr] = ++sum[curr] || 1, sum),{})
+    let language = list.map(dev => dev.language)
+    
+    const count = language.reduce((sum,curr) => (sum[curr] = ++sum[curr] || 1, sum),{})
+    console.log({count})
+    const min = Math.min(...Object.values(count))
+    const max = Math.max(...Object.values(count))
+    console.log({min,max})
+    const test = (2*min >= max) ? true : false ;
+    console.log({test})
+    return test
 
-      return (Math.max(...Object.values(count))-Math.min(...Object.values(count)) > 1) ? false : true ;
+}
 
-  }
+// 1 , 2 , 3
+
+// 3
+// 1
+// 2*1 = 2
 
   console.log(isLanguageDiverse(list1))
